@@ -30,7 +30,7 @@ Aşağıda listelenen minimum uygulanabilir ürün (MVP) spesifikasyonlarını k
 - [X] `package.json` dosyasında listelenen bağımlılıkları indirmek için `npm install` komutunu çalıştırın.
 - [X] Projeyi derlemek ve sunmak için `npm start` komutunu çalıştırın.
 - [X] Chrome'da `http://localhost:3000` konumuna gidin
-- [ ] Testleri çalıştırmak için ayrı bir terminalde `npm test` komutunu yazın.
+- [X] Testleri çalıştırmak için ayrı bir terminalde `npm test` komutunu yazın.
 
 **MVP için adımlar:**
 
@@ -53,7 +53,12 @@ Aşağıda listelenen minimum uygulanabilir ürün (MVP) spesifikasyonlarını k
 Aşağıdaki soruları yanıtlayarak bu sprint'in kavramlarını anladığınızı gösterin. Her sorudan sonra yanıtlarınızı eklemek için bu belgeyi düzenleyin.
 
 1. DOM nedir?
+    Sayfayı manipüle etmeye yarayan bir content, style ve structure gösterim biçimi.
 2. Bir event nedir?
+    Mouse'a tıklama, mouse tekerleğini döndürme, oku div'in üzerine getirme vs gibi olaylar.
 3. Bir event dinleyici(listener) nedir?
+    Eventleri okuyup algıladığında bilgisayarın tepki verebilmesi için yazılan kod.
 4. Neden bir NodeList'i Array'e dönüştürelim??
+    Array'a dönüştürürsek index kullanabiliriz. Neden index kullanalım? Çünkü aynı başlık altında aynı isme sahip birden fazla class/div olabilir.
 5. Bileşen nedir?
+    Bileşen bir template'tir. Daha sonra tekrar tekrar kullanacağımız yapılar için bir örnek hazırlarız, bunu tekrar kullanabileceğimiz şekilde hazırlarız ve buna bileşen deriz.

@@ -40,13 +40,11 @@ const tabEkleyici = (secici) => {
   // Tabları, fonksiyona iletilen seçiciyle eşleşen DOM'daki öğeye ekleyin.
   //
 
-  axios
-    .get("http://localhost:5001/api/konular")
-    .then((resp) => {
-      const tabs = Tablar(resp.data.konular);
-      const tabCont = document.querySelector(secici);
-      tabCont.appendChild(tabs);
-    })
+  axios.get("http://localhost:5001/api/konular")
+  .then (function(alinanVeri) {
+    const tabs = Tablar(alinanVeri.data.konular);
+    document.querySelector(secici).appendChild(tabs);
+  })
 
 }
 

@@ -58,12 +58,13 @@ const cardEkleyici = (secici) => {
   // Her cardı, fonksiyona iletilen seçiciyle eşleşen DOM'daki öğeye ekleyin.
   //
 
-  axios
-    .get("http://localhost:5001/api/makaleler")
-    .then((resp) => {
-      for (let i in resp.data.makaleler) {
-        resp.data.makaleler[i].forEach((element) => {
-          let article = Card (element);
+  axios.get("http://localhost:5001/api/makaleler")
+    .then((alinanVeri) => {
+      for (let i in alinanVeri.data.makaleler) {
+        //console.log(alinanVeri.data.makaleler);
+        
+        alinanVeri.data.makaleler[i].forEach((item) => {
+          let article = Card(item);
           document.querySelector(secici).appendChild(article);
         })
       }
