@@ -17,7 +17,34 @@ const Card = (makale) => {
   //   </div>
   // </div>
   //
+
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  const baslik = document.createElement("div");
+  baslik.classList.add("headline");
+  baslik.textContent = makale["anabaslik"];
+  card.appendChild(baslik);
+
+  const author = document.createElement("div");
+  author.classList.add("author");
+  card.appendChild(author);
+
+  const imgCont = document.createElement("div");
+  imgCont.classList.add("img-container");
+  author.appendChild(imgCont);
+
+  const img = document.createElement("img");
+  img.src = makale["yazarFoto"];
+  imgCont.appendChild(img);
+
+  const span = document.createElement("span");
+  span.textContent = `${makale["yazarAdi"]} tarafından`;
+  author.appendChild(span);
+
+  return card;
 }
+
 
 const cardEkleyici = (secici) => {
   // GÖREV 6
@@ -28,6 +55,16 @@ const cardEkleyici = (secici) => {
   // Card bileşenini kullanarak yanıttaki her makale nesnesinden bir kart oluşturun.
   // Her cardı, fonksiyona iletilen seçiciyle eşleşen DOM'daki öğeye ekleyin.
   //
+
+  axios.get("http://localhost:5001/api/makaleler")
+  .then (function (response) {
+    return (response.data);
+  })
+
+  .then (function (makaleler){
+    document.querySelector(secici).appendChild(Card(makaleler));
+  })
+
 }
 
 export { Card, cardEkleyici }

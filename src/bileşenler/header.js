@@ -11,6 +11,25 @@ const Header = (baslik, tarih, yazi) => {
   //    <span class="temp">{ yazi }</span>
   //  </div>
   //
+
+  const header = document.createElement("div");
+  header.classList.add("header");
+
+  const date = document.createElement("span");
+  date.classList.add("date");
+  date.textContent = tarih;
+  header.appendChild(date);
+
+  const baslik_ = document.createElement("h1");
+  baslik_.textContent = baslik;
+  header.appendChild(baslik_);
+
+  const temp = document.createElement("span");
+  temp.classList.add("temp");
+  temp.textContent = yazi;
+  header.appendChild(temp);
+
+  return header;
 }
 
 const headerEkleyici = (secici) => {
@@ -23,6 +42,10 @@ const headerEkleyici = (secici) => {
 
   // İPUCU: querySelector bir string alabilir (bknz: querySelector("#wrapper")) 
   // fakat aynı zamanda bir değişken de alabilir (bknz: querySelector(secici))
+
+  const birHeader = Header ("Teknoloji Zamanı", "26 Kasım 2022", "BLABLABLA");
+
+  document.querySelector(secici).appendChild(birHeader);
  
 }
 
