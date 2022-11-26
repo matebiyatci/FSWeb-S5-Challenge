@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const Card = (makale) => {
   // GÖREV 5
   // ---------------------
@@ -56,15 +58,16 @@ const cardEkleyici = (secici) => {
   // Her cardı, fonksiyona iletilen seçiciyle eşleşen DOM'daki öğeye ekleyin.
   //
 
-  axios.get("http://localhost:5001/api/makaleler")
-  .then (function (response) {
-    return (response.data);
-  })
-
-  .then (function (makaleler){
-    document.querySelector(secici).appendChild(Card(makaleler));
-  })
-
-}
+  axios
+    .get("http://localhost:5001/api/makaleler")
+    .then((resp) => {
+      for (let i in resp.data.makaleler) {
+        resp.data.makaleler[i].forEach((element) => {
+          let article = Card (element);
+          document.querySelector(secici).appendChild(article);
+        })
+      }
+    })
+  }
 
 export { Card, cardEkleyici }
